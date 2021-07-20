@@ -44,7 +44,19 @@ public class DatosSismos implements Serializable{
     
     @Column(name = "Referencia", nullable = false)
     private String Referencia_Geografica = null;
+	
+    public DatosSismos(Date FechaLocal, Date FechaUTC, Double Latitud, Double Longitud, Integer Profundidad, Double Magnitud, String Referencia_Geografica) {
+    	this.FechaLocal = FechaLocal;
+    	this.FechaUTC = FechaUTC;
+    	this.Latitud = Latitud;
+    	this.Longitud = Longitud;
+        this.Profundidad = Profundidad;
+        this.Magnitud = Magnitud;
+        this.Referencia_Geografica = Referencia_Geografica;
+    }
 
+    public DatosSismos() {
+    }
     
 	public Long getId() {
 		return id;
