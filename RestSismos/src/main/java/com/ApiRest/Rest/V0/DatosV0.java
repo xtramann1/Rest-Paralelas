@@ -13,7 +13,7 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(value = "datosSismos")
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class DatosV0 {
-	
+	private int idd = 0;
 	private Date fechalocal= null;
 	private Date fechautc = null;
 	private Double latitud = 0.0;
@@ -28,6 +28,7 @@ public class DatosV0 {
 	
 	public DatosV0(DatosSismos sismito) {
 		
+		this.idd = sismito.getIdd();
         this.fechalocal = sismito.getFechaLocal();
         this.fechautc = sismito.getFechaUTC();
         this.referencia = StringUtils.upperCase(StringUtils.normalizeSpace(StringUtils.trimToEmpty(sismito.getReferencia_Geografica())));
@@ -44,6 +45,15 @@ public class DatosV0 {
 	
 	public void setFechaLocal(Date fechalocal) {
 		this.fechalocal = fechalocal;
+	}
+	
+	@ApiModelProperty(value = "ide",required = true)
+	public int getIdd() {
+		return idd;
+	}
+
+	public void setIdd(int idd) {
+		this.idd = idd;
 	}
 	
 	@ApiModelProperty(value = "Fecha utc",required = true)
