@@ -72,8 +72,10 @@ public class scrapting {
 					}
 					i++;
 				}
+				sismito.setIdd(o);
 				Datos.add(sismito);
 				i=0;
+				o++;
 			}
 			else {
 				o++;
