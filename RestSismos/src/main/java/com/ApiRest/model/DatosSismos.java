@@ -22,6 +22,9 @@ public class DatosSismos implements Serializable{
     @Column(name = "pk", nullable = false)
     private Long id = null;
 	
+	@Column(name = "ide", nullable = false)
+	private int idd = 0;
+	
 	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss")
     @Column(name = "FechaLocal", nullable = false)
     private Date FechaLocal = null;
@@ -44,8 +47,9 @@ public class DatosSismos implements Serializable{
     
     @Column(name = "Referencia", nullable = false)
     private String Referencia_Geografica = null;
-	
-    public DatosSismos(Date FechaLocal, Date FechaUTC, Double Latitud, Double Longitud, Integer Profundidad, Double Magnitud, String Referencia_Geografica) {
+    
+    public DatosSismos(int idd, Date FechaLocal, Date FechaUTC, Double Latitud, Double Longitud, Integer Profundidad, Double Magnitud, String Referencia_Geografica) {
+    	this.idd = idd;
     	this.FechaLocal = FechaLocal;
     	this.FechaUTC = FechaUTC;
     	this.Latitud = Latitud;
@@ -64,6 +68,14 @@ public class DatosSismos implements Serializable{
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public int getIdd() {
+		return idd;
+	}
+
+	public void setIdd(int idd) {
+		this.idd = idd;
 	}
 
 	public Date getFechaLocal() {
