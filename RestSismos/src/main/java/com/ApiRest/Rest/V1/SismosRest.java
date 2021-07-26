@@ -14,6 +14,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,6 +48,7 @@ public class SismosRest implements Serializable{
         @ApiResponse(code = 404, message = "No se ha encontrado la información solicitada", response = ErrorV0.class),
         @ApiResponse(code = 412, message = "Falló alguna precondición", response = ErrorV0.class)
     })
+	@CrossOrigin(origins = "http://localhost:8100")
 	@GetMapping(value = "/listar", consumes = {"*/*"}, produces = {"application/json;charset=utf-8"})
 	public ResponseEntity getAll() throws IOException, ParseException{
         final String ip = IPUtils.getClientIpAddress(httpRequest);
