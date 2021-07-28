@@ -28,7 +28,7 @@ import com.ApiRest.model.DatosSismos;
 import com.ApiRest.utils.IPUtils;
 
 @RestController
-@RequestMapping(value = "/v1/Sismo", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
+@RequestMapping(value = "/grupo-c/v1/Sismo", consumes = {"application/json;charset=utf-8"}, produces = {"application/json;charset=utf-8"})
 public class SismosRest implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
